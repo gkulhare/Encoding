@@ -28,12 +28,12 @@ pub fn detect_error_parity(message : &String) -> String{
     let len = message.len();
     let recreated_message = encode_parity(&message[0..len-1].to_string());
 
-    println!("last recreated bit is {} last original bit is {}",&recreated_message[len-1..len],&message[len-1..len]);    
+    //println!("last recreated bit is {} last original bit is {}",&recreated_message[len-1..len],&message[len-1..len]);    
     
     if recreated_message[len-1..len] == message[len-1..len]{
-        return ("The message is safe").to_string();
+        return ("\nThe message is safe\n").to_string();
     }
     else{
-        return ("The message has been compromised").to_string();
+        return ("\nThe message has been compromised\n").to_string();
     }
 }
